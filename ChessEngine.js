@@ -1,9 +1,10 @@
 class ChessElement {
   constructor(type) {
     this.type = this.initializeElement(type);
+    this.isDead = false;
     // this.currentPlayer = "white";
   }
-  
+
   initializeBoard(type) {
     // super.color
     // 체스말의 상태를 초기화합니다.
@@ -12,11 +13,29 @@ class ChessElement {
   movePoint() {
     // 이동할 수 있는 경로를 표출합니다.
   }
+  click() {
+    this.movePoint();
+  }
 }
-
+class BlackElement extends ChessElement {
+  static color = "B";
+  constructor(type) {
+    super(type);
+  }
+}
+class WhiteElement extends ChessElement {
+  static color = "W";
+  constructor(type) {
+    super(type);
+  }
+}
 class ChessEngine {
   constructor() {
     this.board = this.initializeBoard();
+    this.lastMoved = {
+      x: 0,
+      y: 0,
+    };
     this.currentPlayer = "white";
   }
 
@@ -40,3 +59,18 @@ class ChessEngine {
     // 스테일메이트 상태를 검증합니다.
   }
 }
+{
+}
+{
+}
+{
+  action: "PHON";
+  postion: "GO";
+}
+{
+  action: "PHON";
+  postion: "BACK";
+}
+() => (next) => (action) => {
+  next(action);
+};
